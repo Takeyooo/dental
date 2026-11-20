@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Fraunces", Georgia, Cambria, serif;
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8f7f4;
+    color: #0f172a;
+  }
+
+  h1, h2, .font-serif-display {
+    font-family: var(--font-display);
+  }
+
+  .font-sans-ui {
+    font-family: var(--font-sans);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.bg-porcelain-canvas {
+  background-color: #f8f7f4;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 85% -5%, rgba(154, 123, 79, 0.10), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 5% 20%, rgba(11, 31, 58, 0.045), transparent 70%);
+}
+
+.bg-page-banner-light {
+  background-color: #fdfcfa;
+  background-image:
+    radial-gradient(ellipse 70% 90% at 90% 0%, rgba(180, 146, 90, 0.12), transparent 65%),
+    radial-gradient(ellipse 55% 75% at 10% 100%, rgba(11, 31, 58, 0.05), transparent 65%),
+    linear-gradient(180deg, #ffffff 0%, #f7f5ef 100%);
+}
+
+.bg-silk-surface {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+}
+
+.bg-sapphire-hero {
+  background-color: #08172e;
+  background-image:
+    radial-gradient(ellipse 65% 85% at 92% 8%, rgba(212, 180, 131, 0.18), transparent 60%),
+    radial-gradient(ellipse 55% 75% at 8% 92%, rgba(30, 64, 125, 0.38), transparent 65%),
+    linear-gradient(135deg, #061124 0%, #0b1f3a 52%, #122d54 100%);
+}
+
+.bg-architectural-dots {
+  background-image: radial-gradient(rgba(11, 31, 58, 0.085) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-fine-grid {
+  background-image:
+    linear-gradient(to right, rgba(223, 193, 145, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(223, 193, 145, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.card-elevated {
+  box-shadow:
+    0 1px 2px rgba(11, 31, 58, 0.04),
+    0 10px 28px -10px rgba(11, 31, 58, 0.08);
+}
+
+.card-gallery {
+  box-shadow:
+    0 2px 4px rgba(11, 31, 58, 0.05),
+    0 20px 44px -16px rgba(11, 31, 58, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

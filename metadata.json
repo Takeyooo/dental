@@ -1,0 +1,6 @@
+{
+  "name": "Dental Indoor — Dr. Abdur Rohim",
+  "description": "Dental Indoor landing page and WhatsApp patient appointment scheduling for Dr. Abdur Rohim, Oral and Dental Specialist and Surgeon in Siddhirganj, Narayanganj.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
