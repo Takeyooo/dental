@@ -76,16 +76,27 @@ export function LocationPage() {
                   />
                   <div>
                     <p className="text-xs font-medium text-slate-500">
-                      Direct Phone &amp; WhatsApp Serial Number
+                      Direct Phone &amp; WhatsApp Serial Numbers
                     </p>
-                    <a
-                      href={`tel:+88${CLINIC_INFO.phoneDisplay}`}
-                      className="mt-1 inline-block font-mono text-xl font-semibold tabular-nums text-[#0B1F3A] hover:underline"
-                    >
-                      {CLINIC_INFO.phoneDisplay}
-                    </a>
-                    <p className="mt-1 text-xs text-slate-500">
-                      International format:{' '}
+                    <div className="mt-1.5 flex flex-wrap items-center gap-4">
+                      <a
+                        href={`tel:+88${CLINIC_INFO.secondaryPhoneDigits}`}
+                        className="font-mono text-lg sm:text-xl font-semibold tabular-nums text-[#0B1F3A] hover:underline"
+                      >
+                        {CLINIC_INFO.secondaryPhoneDisplay}
+                      </a>
+                      <span aria-hidden="true" className="text-slate-300">
+                        ·
+                      </span>
+                      <a
+                        href={`tel:+88${CLINIC_INFO.phoneDisplay}`}
+                        className="font-mono text-lg sm:text-xl font-semibold tabular-nums text-[#0B1F3A] hover:underline"
+                      >
+                        {CLINIC_INFO.phoneDashed}
+                      </a>
+                    </div>
+                    <p className="mt-1.5 text-xs text-slate-500">
+                      WhatsApp Desk:{' '}
                       <span className="font-mono tabular-nums">
                         {CLINIC_INFO.phoneFormatted}
                       </span>

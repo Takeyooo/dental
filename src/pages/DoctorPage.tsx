@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight, Award, CalendarCheck2, ShieldCheck, Stethoscope } from 'lucide-react';
@@ -25,31 +26,70 @@ const CLINICAL_PRINCIPLES = [
 ];
 
 export function DoctorPage() {
+  const [lang, setLang] = useState<'en' | 'bn'>('en');
+
   return (
     <>
       <section className="bg-page-banner-light border-b border-slate-200/80 py-10 sm:py-14">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div>
             <p className="text-sm font-semibold text-[#7C5E34]">
-              Attending Dental Surgeon
+              {lang === 'en'
+                ? 'Attending Dental Surgeon'
+                : 'মুখ ও দন্তরোগ বিশেষজ্ঞ এবং সার্জন'}
             </p>
             <h1 className="mt-2 font-serif-display text-3xl font-semibold tracking-tight text-[#0B1F3A] sm:text-4xl text-balance">
-              {CLINIC_INFO.doctorName}
+              {lang === 'en' ? CLINIC_INFO.doctorName : CLINIC_INFO.doctorNameBn}
             </h1>
             <p className="mt-2 text-base font-medium text-slate-700">
-              {CLINIC_INFO.doctorRole}
+              {lang === 'en' ? CLINIC_INFO.doctorRole : CLINIC_INFO.doctorRoleBn}
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-slate-600">
-              <span className="font-mono font-semibold tabular-nums text-[#0B1F3A]">
-                BMDC Reg. No. {CLINIC_INFO.bmdcReg}
+              <span className="font-semibold text-[#0B1F3A]">
+                {CLINIC_INFO.doctorDegreeSummary}
               </span>
               <span aria-hidden="true">·</span>
-              <span>Dhaka Dental College &amp; Hospital</span>
+              <span className="font-mono font-semibold tabular-nums text-[#7C5E34]">
+                {lang === 'en'
+                  ? `BMDC Reg. No: ${CLINIC_INFO.bmdcReg}`
+                  : `বি.এম.ডি.সি রেজি নং : ${CLINIC_INFO.bmdcRegBn}`}
+              </span>
             </div>
           </div>
 
-          <div className="hidden sm:flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-[#9A7B4F]/40 bg-white font-serif-display text-2xl font-semibold tracking-wider text-[#0B1F3A] shadow-xs">
-            AR
+          <div className="flex items-center gap-4 shrink-0">
+            <div
+              role="group"
+              aria-label="Select credential language"
+              className="inline-flex rounded-xl border border-slate-200 bg-white p-1 shadow-xs"
+            >
+              <button
+                type="button"
+                onClick={() => setLang('en')}
+                className={`min-h-[36px] rounded-lg px-3 py-1 text-xs font-semibold transition-colors whitespace-nowrap cursor-pointer ${
+                  lang === 'en'
+                    ? 'bg-[#0B1F3A] text-white'
+                    : 'text-slate-600 hover:text-[#0B1F3A]'
+                }`}
+              >
+                English
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang('bn')}
+                className={`min-h-[36px] rounded-lg px-3 py-1 text-xs font-semibold transition-colors whitespace-nowrap cursor-pointer ${
+                  lang === 'bn'
+                    ? 'bg-[#0B1F3A] text-white'
+                    : 'text-slate-600 hover:text-[#0B1F3A]'
+                }`}
+              >
+                বাংলা
+              </button>
+            </div>
+
+            <div className="hidden sm:flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#9A7B4F]/40 bg-white font-serif-display text-xl font-semibold tracking-wider text-[#0B1F3A] shadow-xs">
+              AR
+            </div>
           </div>
         </div>
       </section>
@@ -71,12 +111,35 @@ export function DoctorPage() {
               </h2>
 
               <p className="mt-4 text-base leading-relaxed text-slate-600">
-                With postgraduate training across maxillofacial surgery,
-                conservative dentistry, endodontics, periodontics,
-                prosthodontics, and smile aesthetics, Dr. Abdur Rohim leads
-                Dental Indoor with a focus on gentle, evidence-based clinical
-                outcomes.
+                With {CLINIC_INFO.doctorDegreeSummary} and postgraduate clinical
+                training across maxillofacial surgery, conservative dentistry,
+                endodontics, periodontics, prosthodontics, and smile
+                aesthetics, Dr. Abdur Rohim leads Dental Indoor with a focus on
+                gentle, evidence-based clinical outcomes.
               </p>
+
+              <div className="mt-6 rounded-xl border border-slate-200/90 bg-white p-4 text-sm text-slate-700">
+                <p className="text-xs font-medium text-slate-500">
+                  BMDC Registered Doctor · Serial Contacts
+                </p>
+                <div className="mt-2 flex flex-wrap items-center gap-3 font-mono font-semibold tabular-nums text-[#0B1F3A]">
+                  <a
+                    href={`tel:+88${CLINIC_INFO.secondaryPhoneDigits}`}
+                    className="hover:underline"
+                  >
+                    {CLINIC_INFO.secondaryPhoneDisplay}
+                  </a>
+                  <span aria-hidden="true" className="text-slate-300">
+                    ·
+                  </span>
+                  <a
+                    href={`tel:+88${CLINIC_INFO.phoneDisplay}`}
+                    className="hover:underline"
+                  >
+                    {CLINIC_INFO.phoneDashed}
+                  </a>
+                </div>
+              </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link
@@ -112,11 +175,11 @@ export function DoctorPage() {
                           0{index + 1}
                         </span>
                         <h3 className="font-sans-ui text-base font-semibold text-[#0B1F3A]">
-                          {cred.title}
+                          {lang === 'en' ? cred.title : cred.titleBn}
                         </h3>
                       </div>
                       <p className="pl-7 text-sm text-slate-600 sm:pl-0 sm:text-right">
-                        {cred.detail}
+                        {lang === 'en' ? cred.detail : cred.title}
                       </p>
                     </div>
                   ))}

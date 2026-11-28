@@ -131,7 +131,7 @@ export function Layout({ children }: LayoutProps) {
               <p className="mt-4 text-xs leading-relaxed text-slate-300/90">
                 {CLINIC_INFO.doctorName} · {CLINIC_INFO.doctorRole}
                 <br />
-                BMDC Reg. No.{' '}
+                {CLINIC_INFO.doctorDegreeSummary} · BMDC Reg. No.{' '}
                 <span className="font-mono tabular-nums text-white">
                   {CLINIC_INFO.bmdcReg}
                 </span>
@@ -178,12 +178,21 @@ export function Layout({ children }: LayoutProps) {
               <p className="mt-3 text-sm leading-relaxed text-slate-300">
                 {CLINIC_INFO.address}
               </p>
-              <div className="mt-4 flex flex-wrap items-center gap-4">
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <a
+                  href={`tel:+88${CLINIC_INFO.secondaryPhoneDigits}`}
+                  className="font-mono text-sm font-semibold tabular-nums text-white hover:underline"
+                >
+                  {CLINIC_INFO.secondaryPhoneDisplay}
+                </a>
+                <span aria-hidden="true" className="text-slate-500">
+                  ·
+                </span>
                 <a
                   href={`tel:+88${CLINIC_INFO.phoneDisplay}`}
                   className="font-mono text-sm font-semibold tabular-nums text-white hover:underline"
                 >
-                  {CLINIC_INFO.phoneDisplay}
+                  {CLINIC_INFO.phoneDashed}
                 </a>
                 <span aria-hidden="true" className="text-slate-500">
                   ·

@@ -27,12 +27,20 @@ export const CLINIC_INFO = {
   brandNameBn: 'ডেন্টাল ইনডোর',
   tagline: 'Implant, Orthodontic and Aesthetics Care',
   doctorName: 'Dr. Abdur Rohim',
-  doctorRole: 'Oral and Dental Specialist and Surgeon',
+  doctorNameBn: 'ডাঃ আব্দুর রহিম',
+  doctorRole: 'Specialized Oral & Dental Surgeon',
+  doctorRoleBn: 'মুখ ও দন্তরোগ বিশেষজ্ঞ এবং সার্জন',
+  doctorDegreeSummary: 'BDS (DU), PGT (Dhaka Dental College)',
   bmdcReg: '15191',
+  bmdcRegBn: '১৫১৯১',
   phoneDisplay: '01750643086',
   phoneFormatted: '+880 1750-643086',
+  phoneDashed: '01750-643086',
+  secondaryPhoneDisplay: '01836-032685',
+  secondaryPhoneDigits: '01836032685',
   whatsappDigits: '8801750643086',
   address: 'Signboard, Sahebpara Bazar, Canalpar, Siddhirganj, Narayanganj',
+  addressBn: 'সাইনবোর্ড, সাহেবপাড়া বাজার, ক্যানেলপাড়, সিদ্ধিরগঞ্জ, নারায়ণগঞ্জ।',
   signboardImage: '/assets/aistudio/image_20afa0f8.png',
   mapsUrl:
     'https://www.google.com/maps/search/?api=1&query=Signboard+Sahebpara+Bazar+Canalpar+Siddhirganj+Narayanganj',
@@ -40,27 +48,33 @@ export const CLINIC_INFO = {
 
 export const DOCTOR_CREDENTIALS = [
   {
-    title: 'BDS (Dhaka)',
-    detail: 'Bachelor of Dental Surgery',
+    title: 'BDS (DU)',
+    titleBn: 'বি.ডি.এস (ঢাকা বিশ্ববিদ্যালয়)',
+    detail: 'Bachelor of Dental Surgery, University of Dhaka',
   },
   {
-    title: 'Dhaka Dental College & Hospital',
-    detail: 'Clinical Residency & Institutional Training',
-  },
-  {
-    title: 'PGT (Maxillofacial Surgery)',
+    title: 'PGT (Oral & Maxillofacial Surgery)',
+    titleBn: 'পিজিটি (ওরাল এন্ড ম্যাক্সিলোফেসিয়াল সার্জারি)',
     detail: 'Post-Graduate Training in Oral & Maxillofacial Surgical Care',
   },
   {
-    title: 'PGT (Conservative Dentistry)',
+    title: 'PGT (Conservative Dentistry & Endodontics)',
+    titleBn: 'পিজিটি (কনজারভেটিভ ডেন্টিস্ট্রি ও এন্ডোডন্টিক্স)',
     detail: 'Post-Graduate Training in Endodontics & Tooth Preservation',
   },
   {
+    title: 'PGT (Dhaka Dental College & Hospital)',
+    titleBn: 'পিজিটি (ঢাকা ডেন্টাল কলেজ ও হাসপাতাল)',
+    detail: 'Post-Graduate Clinical Residency & Hospital Training',
+  },
+  {
     title: 'Advanced Training on Endo, Perio & Prosthodontics',
+    titleBn: 'এডভান্সড ট্রেনিং অন এন্ডো, পেরিও এন্ড প্রস্থোডন্টিক্স',
     detail: 'Root Canal Therapy, Gum Care, Crowns, Bridges & Dentures',
   },
   {
     title: 'Special Trained in Aesthetics',
+    titleBn: 'এস্থেটিক ডেন্টিস্ট্রিতে বিশেষ প্রশিক্ষণপ্রাপ্ত',
     detail: 'Veneers, Diastema Closure, Smile Design & Teeth Whitening',
   },
 ];

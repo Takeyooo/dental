@@ -101,9 +101,9 @@ export function HomePage() {
               </h1>
 
               <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600">
-                {CLINIC_INFO.doctorRole} (BDS, Dhaka; Dhaka Dental College &amp;
-                Hospital). Serving Siddhirganj, Narayanganj with gentle clinical
-                precision and effortless WhatsApp serial scheduling.
+                {CLINIC_INFO.doctorRole} ({CLINIC_INFO.doctorDegreeSummary}).
+                Serving Siddhirganj, Narayanganj with gentle clinical precision
+                and effortless WhatsApp serial scheduling.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -127,7 +127,7 @@ export function HomePage() {
                     className="h-4 w-4 text-[#9A7B4F]"
                     aria-hidden="true"
                   />
-                  <span>Call {CLINIC_INFO.phoneDisplay}</span>
+                  <span>Call {CLINIC_INFO.phoneDashed}</span>
                 </a>
               </div>
             </motion.div>
@@ -162,14 +162,14 @@ export function HomePage() {
                     </p>
                     <p className="mt-4 font-mono text-sm text-slate-200 tabular-nums">
                       BMDC Reg. No. {CLINIC_INFO.bmdcReg} ·{' '}
-                      {CLINIC_INFO.phoneDisplay}
+                      {CLINIC_INFO.phoneDashed}
                     </p>
                   </div>
                 )}
                 <figcaption className="flex flex-wrap items-center justify-between gap-2 px-2 pt-3 pb-1 text-xs text-slate-600">
                   <span className="font-medium text-slate-700">
-                    {CLINIC_INFO.brandName} · {CLINIC_INFO.doctorName} (BDS,
-                    Dhaka)
+                    {CLINIC_INFO.brandName} · {CLINIC_INFO.doctorName} (
+                    {CLINIC_INFO.doctorDegreeSummary})
                   </span>
                   <span className="font-mono tabular-nums text-[#7C5E34]">
                     BMDC Reg. {CLINIC_INFO.bmdcReg}
@@ -196,10 +196,10 @@ export function HomePage() {
             </div>
             <div className="p-5 sm:p-6 border-t border-slate-200 lg:border-t-0">
               <p className="text-xs font-medium text-slate-500">
-                WhatsApp Serial Desk
+                WhatsApp &amp; Serial Desk
               </p>
-              <p className="mt-1 font-serif-display text-lg font-semibold text-[#0B1F3A] tabular-nums">
-                {CLINIC_INFO.phoneDisplay}
+              <p className="mt-1 font-serif-display text-base font-semibold text-[#0B1F3A] tabular-nums">
+                {CLINIC_INFO.phoneDashed} · {CLINIC_INFO.secondaryPhoneDisplay}
               </p>
             </div>
             <div className="p-5 sm:p-6 border-t border-slate-200 sm:border-l lg:border-t-0 lg:border-l-0">
